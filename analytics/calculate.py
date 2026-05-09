@@ -16,8 +16,7 @@ for method in _METHODS:
 
 
 def calculate_integral(f, a, b, limit):
-    quad_result, quad_error = integrate.quad(f, a, b, limit=limit)
-    quad = quad_result
+    quad, _ = integrate.quad(f, a, b, limit=limit)
 
     x = np.linspace(a, b, limit + 1)
     simpson = integrate.simpson(f(x), x)
@@ -42,8 +41,8 @@ def collect_results(limits=(14, 50), answer=2 - np.sqrt(2)):
 
 
 def main():
-    limits  = tuple(map(int, input("Укажите число разбиений (по умолчанию [14,50]): ").split()))
-    results = collect_results( limits)
+    limits  = tuple(map(int, input("Укажите число разбиений: ").split()))
+    results = collect_results(limits)
     print(results)
 
 

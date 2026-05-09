@@ -16,7 +16,7 @@ for method in _METHODS:
 
 
 def calculate_integral(x, y):
-    simpson = integrate.simpson(y, x)
+    simpson   = integrate.simpson(y, x)
     trapezoid = integrate.trapezoid(y, x)
 
     return {"simpson": simpson, "trapezoid": trapezoid}
